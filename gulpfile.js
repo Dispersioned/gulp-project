@@ -1,5 +1,6 @@
-const project_folder = require('path').basename(__dirname);
-const source_folder = "app";
+// const project_folder = require('path').basename(__dirname);
+const project_folder = 'dist';
+const source_folder = 'app';
 
 const fs = require('fs');
 
