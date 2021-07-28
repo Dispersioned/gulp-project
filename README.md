@@ -1,6 +1,6 @@
 # How to start
 1. Clone this repo
-2. Remove **.gitignore** and **README.md**
+2. Remove **.gitignore**, **README.md** and **.git**
 3. Type `npm i` in console
 
 
