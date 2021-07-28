@@ -21,3 +21,5 @@
 | Child `button` attributes | Attribute description |
 | --- | --- |
 | `data-spoiler` | Makes the next sibling element a spoiler content |
+
+3. Gh-pages. Type `npm run deploy` in console to create a **gh-pages** branch with all files from **dist** dir
