@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "preinstall": "npm install --package-lock-only --ignore-scripts && npx npm-force-resolutions",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "homepage": "https://dispersioned.github.io/web/",
   "author": "Dispersioned",
