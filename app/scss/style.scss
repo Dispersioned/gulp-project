@@ -1,3 +1,5 @@
+// TECHNICAL MIXINS
+
 @mixin font($font_name, $file_name, $weight, $style) {
 	@font-face {
 		font-family: $font_name;
@@ -8,15 +10,13 @@
 	}
 }
 
+// GLOBAL STYLES
+
 @import 'fonts';
+@import 'vars.scss';
 @import 'reset.scss';
-@import 'colors.scss';
 
 // ===== GENERAL ======
-
-:root {
-	font-size: 10px;
-}
 
 body {
 	&._lock {
@@ -25,10 +25,28 @@ body {
 }
 
 .container {
-	max-width: 1170px;
+	max-width: $containerWidth;
 	width: 100%;
 	padding: 0 20px;
 	margin: 0 auto;
+
+	@media (max-width: 991px) {
+		padding: 0 10px;
+	}
+	@media (max-width: 575px) {
+		padding: 0 5px;
+	}
 }
 
-// @import 'YOUR-FILE.scss';
+.btn {
+	display: inline-block;
+	outline: none;
+	border: none;
+	background-color: transparent;
+	
+	&:focus {
+		outline: auto;
+	}
+}
+
+// @import 'yourfile.scss';
