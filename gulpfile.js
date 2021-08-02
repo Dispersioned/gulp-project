@@ -28,25 +28,26 @@ const path = {
 	clean: './' + project_folder + '/',
 };
 
-const {src, dest}  = require('gulp');
-const gulp         = require('gulp');
-const browsersync  = require('browser-sync').create();
-const fileinclude  = require('gulp-file-include');
-const del          = require('del');
-const scss         = require('gulp-sass');
-const autoprefixer = require('gulp-autoprefixer');
-const group_media  = require('gulp-group-css-media-queries');
-const clean_css    = require('gulp-clean-css');
-const rename       = require('gulp-rename');
-const uglify       = require('gulp-uglify-es').default;
-const imagemin     = require('gulp-imagemin');
-const ttf2woff     = require('gulp-ttf2woff');
-const ttf2woff2    = require('gulp-ttf2woff2');
-const fonter       = require('gulp-fonter');
-const replace      = require('gulp-replace');
-const webp         = require('gulp-webp');
-const webphtml     = require('gulp-webp-html');
-const webpcss      = require('gulp-webpcss');
+const {src, dest}  = require('gulp'),
+	gulp             = require('gulp'),
+	browsersync      = require('browser-sync').create(),
+	fileinclude      = require('gulp-file-include'),
+	del              = require('del'),
+	scss             = require('gulp-sass'),
+	autoprefixer     = require('gulp-autoprefixer'),
+	group_media      = require('gulp-group-css-media-queries'),
+	clean_css        = require('gulp-clean-css'),
+	rename           = require('gulp-rename'),
+	uglify           = require('gulp-uglify-es').default,
+	imagemin         = require('gulp-imagemin'),
+	ttf2woff         = require('gulp-ttf2woff'),
+	ttf2woff2        = require('gulp-ttf2woff2'),
+	fonter           = require('gulp-fonter'),
+	replace          = require('gulp-replace'),
+	webp             = require('gulp-webp'),
+	webphtml         = require('gulp-webp-html'),
+	webpcss          = require('gulp-webpcss'),
+	newer            = require('gulp-newer');
 
 function browserSync(params) {
 	browsersync.init({
@@ -106,6 +107,7 @@ function css() {
 
 function images() {
 	return src(path.src.img)
+		.pipe(newer(path.build.img))
 		.pipe(
 			webp({
 				quality: 90,
@@ -113,16 +115,17 @@ function images() {
 		)
 		.pipe(dest(path.build.img))
 		.pipe(src(path.src.img))
+		.pipe(newer(path.build.img))
 		.pipe(
 			imagemin({
-			progressive: true,
-			svgoPlugins: [{ removeViewBox: false }],
-			interlaced: true, 
-			optimizationLevel: 3, // 0 to 7
+				progressive: true,
+				svgoPlugins: [{ removeViewBox: false }],
+				interlaced: true,
+				optimizationLevel: 3, // 0 to 7
 			})
 		)
 		.pipe(dest(path.build.img))
-		.pipe(browsersync.stream())
+		.pipe(browsersync.stream());
 }
 
 function fonts() {
