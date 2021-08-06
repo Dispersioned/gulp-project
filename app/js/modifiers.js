@@ -38,18 +38,21 @@ let isMobile = {
 let body = document.querySelector('body');
 if (isMobile.any()) {
 	body.classList.add('touch');
-	// let arrow = document.querySelectorAll('.arrow');
-	// for (i = 0; i < arrow.length; i++) {
-	// 	let thisLink = arrow[i].previousElementSibling;
-	// 	let subMenu = arrow[i].nextElementSibling;
-	// 	let thisArrow = arrow[i];
-
-	// 	thisLink.classList.add('parent');
-	// 	arrow[i].addEventListener('click', function () {
-	// 		subMenu.classList.toggle('open');
-	// 		thisArrow.classList.toggle('active');
-	// 	});
-	// }
 } else {
 	body.classList.add('mouse');
+}
+
+if (body.classList.contains('mouse')) {
+	console.log('mouse');
+	// Let the document know when the mouse is being used
+	document.body.addEventListener('mousedown', function (e) {
+		document.body.classList.add('using-mouse');
+	});
+
+	// Re-enable focus styling when Tab is pressed
+	document.body.addEventListener('keydown', function (e) {
+		if (event.keyCode === 9) {
+			document.body.classList.remove('using-mouse');
+		}
+	});
 }

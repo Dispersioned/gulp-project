@@ -39,6 +39,10 @@ body {
 	&._lock {
 		overflow: hidden;
 	}
+
+	&.using-mouse :focus {
+		outline: none;
+	}
 }
 
 .container {
