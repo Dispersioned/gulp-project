@@ -43,7 +43,6 @@ if (isMobile.any()) {
 }
 
 if (body.classList.contains('mouse')) {
-	console.log('mouse');
 	// Let the document know when the mouse is being used
 	document.body.addEventListener('mousedown', function (e) {
 		document.body.classList.add('using-mouse');
