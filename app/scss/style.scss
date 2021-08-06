@@ -40,11 +40,11 @@ body {
 
 .btn {
 	display: inline-block;
-	outline: none;
 	border: none;
 	background-color: transparent;
+	cursor: pointer;
 	
-	&:focus {
+	&:active:focus {
 		outline: auto;
 	}
 }
