@@ -64,10 +64,10 @@ body {
 	border: none;
 	background-color: transparent;
 	cursor: pointer;
-	
-	&:active:focus {
-		outline: auto;
-	}
+}
+
+[hidden] {
+	display: none !important;
 }
 
 @import 'header.scss';
