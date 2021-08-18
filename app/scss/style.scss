@@ -63,7 +63,8 @@ body {
 		overflow: hidden;
 	}
 
-	&.using-mouse :focus {
+	&.using-mouse *:focus,
+	&.touch *:focus {
 		outline: none;
 	}
 }
