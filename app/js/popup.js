@@ -1,4 +1,4 @@
-const popup = function () {
+const popupInit = function () {
 	const popupLinks = document.querySelectorAll('.popup-link');
 	let body = document.querySelector('body');
 	const lockPadding = document.querySelectorAll('.lock-padding');
@@ -116,9 +116,9 @@ const popup = function () {
 	});
 };
 
-popup();
+popupInit();
 
-const select = function () {
+const selectInit = function () {
 	const selectHeader = document.querySelector('.select__header');
 	const selectBtn = document.querySelector('.select__icon');
 	const selectBody = document.querySelector('.select__body');
@@ -151,4 +151,4 @@ const select = function () {
 	}
 };
 
-select();
+selectInit();

@@ -1,11 +1,15 @@
-let burgerIcon = document.querySelector('.header__burger');
-let burgerBody = document.querySelector('.header__nav');
+const burgerInit = function () {
+	let burgerIcon = document.querySelector('.header__burger');
+	let burgerBody = document.querySelector('.header__nav');
 
-if (burgerIcon) {
-	burgerIcon.addEventListener('click', function (e) {
-		document.querySelector('body').classList.toggle('_lock');
+	if (burgerIcon) {
+		burgerIcon.addEventListener('click', function (e) {
+			document.querySelector('body').classList.toggle('_lock');
 
-		burgerIcon.classList.toggle('_active');
-		burgerBody.classList.toggle('_active');
-	});
+			burgerIcon.classList.toggle('_active');
+			burgerBody.classList.toggle('_active');
+		});
+	}
 }
+
+burgerInit();
