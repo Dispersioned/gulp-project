@@ -1,0 +1,38 @@
+body {
+	&._lock {
+		overflow: hidden;
+	}
+
+	&.using-mouse *:focus,
+	&.touch *:focus {
+		outline: none;
+	}
+}
+
+.wrapper {
+	position: relative;
+	z-index: 1000;
+}
+
+.container {
+	max-width: $containerWidth + 40px;
+	width: 100%;
+	padding: 0 20px;
+	margin: 0 auto;
+
+	@media (max-width: 991px) {
+		max-width: $containerWidth + 20px;
+		padding: 0 10px;
+	}
+	@media (max-width: 575px) {
+		max-width: $containerWidth + 10px;
+		// padding: 0 5px;
+	}
+}
+
+.btn {
+	display: inline-block;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+}
